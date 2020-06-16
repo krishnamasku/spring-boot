@@ -20,8 +20,7 @@ public class MainController {
 	private PhoneDirectoryService phoneDirectoryService;
 	
 	@GetMapping(value={"/phone/{number}"}, produces="application/json")
-	public TreeSet<String> getPhoneNumbers(@PathVariable String number, HttpSession session){
-		session.invalidate();
+	public TreeSet<String> getPhoneNumbers(@PathVariable String number){
 		return phoneDirectoryService.getPhoneNumberCombinations(number);
 	}
 	
