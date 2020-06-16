@@ -34,23 +34,30 @@ class PhonedirApplicationTests {
 	@Test
 	void testGetCombinations() {
 		TreeSet<String> expSet = new TreeSet<>();
-		expSet.add("689");
-		expSet.add("698");
-		expSet.add("869");
-		expSet.add("896");
-		expSet.add("968");
-		expSet.add("986");
+		expSet.add("3866106");
+		expSet.add("386610M");
+		expSet.add("386610N");
+		expSet.add("386610O");
+		expSet.add("386M106");
+		expSet.add("386N106");
+		expSet.add("386O106");
+		expSet.add("38M6106");
+		expSet.add("38N6106");
+		expSet.add("38O6106");
+		expSet.add("3T66106");
+		expSet.add("3U66106");
+		expSet.add("3V66106");
+		expSet.add("D866106");
+		expSet.add("E866106");
+		expSet.add("F866106");
 		
-		Mockito.when(dao.getPhoneNumberCombinations("986")).thenReturn(expSet);
+		Mockito.when(dao.getPhoneNumberCombinations("3866106")).thenReturn(expSet);
 		
-		TreeSet<String> actSet = service.getPhoneNumberCombinations("986");
+		TreeSet<String> actSet = service.getPhoneNumberCombinations("3866106");
 		
-		assertEquals(6, actSet.size());
+		assertEquals(expSet.size(), actSet.size());
 		
 		assertLinesMatch(new ArrayList<String>(expSet), new ArrayList<String>(actSet));
-		
-		for(String s : actSet)
-			System.out.println(s);
 		
 	}
 
