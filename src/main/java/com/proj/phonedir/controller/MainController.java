@@ -31,7 +31,7 @@ public class MainController {
 		if (!resultSet.isEmpty()) {
 			resEntity = new ResponseEntity<TreeSet<String>>(resultSet, new HttpHeaders(), HttpStatus.OK);
 		} else {
-			resEntity = new ResponseEntity<String>("Invalid phone number", new HttpHeaders(), HttpStatus.BAD_REQUEST);
+			resEntity = new ResponseEntity<String>("Invalid phone number", new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return resEntity;
 	}
